@@ -24,7 +24,9 @@ function makeCalculator() {
       return this;
     },
     operate(methodName, num) {
-      methodName(num);
+      if (typeof methodName === 'function') {
+        methodName(num);
+      }
 
       return this;
     },
